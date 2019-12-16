@@ -7,8 +7,8 @@ WNPlayer万能播放器，使用FFmpeg最新版本(4.0.2)，没有使用FFmpeg�
 1、先下载FFmpeg的编译文件，可以去到我的网盘下载（FFmpeg的版本是4.0.2,如果自己会编译，也可以自行编译），如果过期及时联系本人，微信18824905363
 
 
-复制这段内容后打开百度网盘手机App，操作更方便哦
-链接：https://pan.baidu.com/s/1h5p9HJ3eaLQi-O6tk6tu2A 提取码：N6A8
+    复制这段内容后打开百度网盘手机App，操作更方便哦
+    链接：https://pan.baidu.com/s/1h5p9HJ3eaLQi-O6tk6tu2A 提取码：N6A8
 
 
 2、第一步的下载文件，提取lib文件夹里面的.a文件，放到项目中的FFmpeg文件下面的lib文件目录下面
