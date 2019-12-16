@@ -30,3 +30,8 @@ OpenGLES.framework
 libiconv.tbd
 libbz2.tbd
 libz.tbd
+
+
+欢迎加入WMPlayer+WNPlayer开发交流群
+
+加本人微信18824905363，备注WMPlayer，我会拉你入群
