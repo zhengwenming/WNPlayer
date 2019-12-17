@@ -132,7 +132,7 @@
     self.wnPlayer.controlView = contrlView;
 //        self.wnPlayer.urlString = @"http://updatedown.heikeyun.net/WMV%E6%96%87%E4%BB%B6%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95.wmv";
 //        self.wnPlayer.urlString = @"rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov";
-//    self.wnPlayer.urlString = @"http://mov.bn.netease.com/mobilev/open/nos/mp4/2015/12/09/SB9F77DEA_sd.mp4";
+    self.wnPlayer.urlString = @"http://mov.bn.netease.com/mobilev/open/nos/mp4/2015/12/09/SB9F77DEA_sd.mp4";
 
 //        self.wnPlayer.urlString = @"https://paasalihlsgw.lechange.cn:443/LCO/4F069C3PAZB2065/15/1/20190919162804/dev_20190919162804_kcfx18ca340dnrdg.m3u8?proto=https";
 
@@ -140,15 +140,19 @@
 //        NSURL *URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"test" ofType:@"flv"]];
 //        self.wnPlayer.urlString = URL.absoluteString;
     
-        self.wnPlayer.urlString = @"http://vodnhbckxkw.vod.126.net/vodnhbckxkw/b1a13c10-ea6e-4ccd-a6e8-32593dcf8ce6.mp4";
-
         [self.view addSubview:self.wnPlayer];
 //        [self.wnPlayer openWithTCP:YES optionDic:@{@"headers":@"Cookie:FTN5K=f44da28b"}];
         [self.wnPlayer play];
+    
+    
+//    e测试header cookie的连接，配合openWithTCP：YES使用
+    //    self.wnPlayer.urlString = @"http://updatedown.heikeyun.net/WMV%E6%96%87%E4%BB%B6%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95.wmv";
+
 }
 
 - (void)dealloc{
     [self.wnPlayer close];
     NSLog(@"%s",__FUNCTION__);
+
 }
 @end
