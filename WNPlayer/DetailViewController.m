@@ -130,7 +130,6 @@
     contrlView.title = @"测试播放wmv";
     contrlView.coverImageView.image = [UIImage imageNamed:@"cover"];
     self.wnPlayer.controlView = contrlView;
-//        self.wnPlayer.urlString = @"http://updatedown.heikeyun.net/WMV%E6%96%87%E4%BB%B6%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95.wmv";
 //        self.wnPlayer.urlString = @"rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov";
     self.wnPlayer.urlString = @"http://mov.bn.netease.com/mobilev/open/nos/mp4/2015/12/09/SB9F77DEA_sd.mp4";
 

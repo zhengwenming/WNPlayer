@@ -162,10 +162,10 @@
 - (void)play {
     if (!self.opened || self.playing) return;
     self.playing = YES;
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1)), dispatch_get_main_queue(), ^{
         [self render];
         [self startFrameReaderThread];
-//    });
+    });
     
     NSError *error = nil;
     if (![self.audioManager play:&error]) {
