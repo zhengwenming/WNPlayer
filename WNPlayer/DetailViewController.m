@@ -130,9 +130,19 @@
     contrlView.title = @"测试播放wmv";
     contrlView.coverImageView.image = [UIImage imageNamed:@"cover"];
     self.wnPlayer.controlView = contrlView;
-//        self.wnPlayer.urlString = @"rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov";
-    self.wnPlayer.urlString = @"http://mov.bn.netease.com/mobilev/open/nos/mp4/2015/12/09/SB9F77DEA_sd.mp4";
+//        self.wnPlayer.urlString = @"rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";
+//    self.wnPlayer.urlString = @"http://mov.bn.netease.com/mobilev/open/nos/mp4/2015/12/09/SB9F77DEA_sd.mp4";
+//    self.wnPlayer.urlString = @"https://review.v.news.cn/review/basics/live4958/20200605/0955521822_mp4/095552_1822_5000k.mp4?ut=5ed9af72&us=73284591&sign=e1ad1a1d2d652bc64c7b1e6f594daa11";
 
+    
+    
+    self.wnPlayer.urlString = @"rtmp://210.73.216.21:1935/live/974348_live";
+
+//    self.wnPlayer.urlString = @"https://becpan245129201909202114533965970.eos-guangzhou-1.cmecloud.cn/53e60ce31cab4823b0576cfdd2e8023a?response-content-disposition=attachment%3Bfilename%3D%22001---%E5%BA%94%E7%94%A8%E9%87%8D%E7%AD%BE%E5%90%8D.wmv%22&AWSAccessKeyId=9RM1KC629RXWWWGZ5XG6&Expires=1585202559&Signature=%2BpEaExUcDfT0eLwhRbRDustSVQk%3D";
+
+    
+    
+    
 //        self.wnPlayer.urlString = @"https://paasalihlsgw.lechange.cn:443/LCO/4F069C3PAZB2065/15/1/20190919162804/dev_20190919162804_kcfx18ca340dnrdg.m3u8?proto=https";
 
         

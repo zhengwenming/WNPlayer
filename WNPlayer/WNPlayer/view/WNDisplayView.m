@@ -321,8 +321,13 @@
     glClearColor(0, 0, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT);
     
+    GLsizei         _viewScale;
+    self.contentScaleFactor =  [UIScreen mainScreen].scale;
+    _viewScale = [UIScreen mainScreen].scale;
+    CGSize size = self.bounds.size;
+    
     // Setup viewport
-    glViewport(0, 0, _backingWidth, _backingHeight);
+    glViewport(0, 0, size.width * _viewScale -2, size.height * _viewScale -2);
     
     // Set frame
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
@@ -350,8 +355,8 @@
 }
 
 + (UIImage *)glToUIImage:(CGSize)size {
-    CGSize viewSize = size;
-    
+    GLsizei _viewScale    =  [UIScreen mainScreen].scale;
+    CGSize viewSize = CGSizeMake(size.width * _viewScale -2, size.height * _viewScale -2);
     NSInteger myDataLength = viewSize.width * viewSize.height * 4;
     
     // allocate array and read pixels into it.

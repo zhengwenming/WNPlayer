@@ -63,7 +63,12 @@
     UIViewController *vc = self.viewControllers[self.selectedIndex];
     if ([vc isKindOfClass:UINavigationController.class]) {
         UINavigationController *nav = (UINavigationController *)vc;
-        return [nav.topViewController shouldAutorotate];
+        NSString *className = NSStringFromClass(self.class);
+            if ([@[@"AVPlayerViewController", @"AVFullScreenViewController", @"AVFullScreenPlaybackControlsViewController"
+                   ] containsObject:className]) {
+                return YES;
+            }
+            return [nav.topViewController shouldAutorotate];
     } else {
         return [vc shouldAutorotate];
     }
@@ -73,6 +78,11 @@
     UIViewController *vc = self.viewControllers[self.selectedIndex];
     if ([vc isKindOfClass:UINavigationController.class]) {
         UINavigationController *nav = (UINavigationController *)vc;
+        NSString *className = NSStringFromClass(self.class);
+            if ([@[@"AVPlayerViewController", @"AVFullScreenViewController", @"AVFullScreenPlaybackControlsViewController"
+                   ] containsObject:className]) {
+                return UIInterfaceOrientationMaskAllButUpsideDown;
+            }
         return [nav.topViewController supportedInterfaceOrientations];
     } else {
         return [vc supportedInterfaceOrientations];
