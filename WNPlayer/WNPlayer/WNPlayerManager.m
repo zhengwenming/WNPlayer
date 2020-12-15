@@ -158,7 +158,29 @@
     });
     dispatch_resume(timer);
 }
-
+- (void)releaseManager{
+    [self pause];
+    [self.decoder prepareClose];
+    
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC, 0.1 * NSEC_PER_SEC);
+    
+    dispatch_source_set_event_handler(timer, ^{
+        [self.decoder close];
+        
+        NSArray<NSError *> *errors = nil;
+        if ([self.audioManager close:&errors]) {
+            [self clearVars];
+            [[NSNotificationCenter defaultCenter] postNotificationName:WNPlayerNotificationClosed object:self];
+        } else {
+            for (NSError *error in errors) {
+                [self handleError:error];
+            }
+        }
+        dispatch_cancel(timer);
+    });
+    dispatch_resume(timer);
+}
 - (void)play {
     if (!self.opened || self.playing) return;
     self.playing = YES;

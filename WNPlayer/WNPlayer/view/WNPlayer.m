@@ -143,7 +143,10 @@ typedef enum : NSUInteger {
     [UIApplication sharedApplication].idleTimerDisabled = NO;
     [self.playerManager close];
 }
-
+- (void)releaseWNPlayer{
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
+    [self.playerManager releaseManager];
+}
 - (void)play {
     if (self.status == WNPlayerStatusNone ||
         self.status == WNPlayerStatusClosed) {

@@ -136,7 +136,7 @@
 
     
     
-    self.wnPlayer.urlString = @"rtmp://210.73.216.21:1935/live/974348_live";
+    self.wnPlayer.urlString = @"http://bian-oss.oss-cn-beijing.aliyuncs.com/Video/20201214/1607929647318294.flv";
 
 //    self.wnPlayer.urlString = @"https://becpan245129201909202114533965970.eos-guangzhou-1.cmecloud.cn/53e60ce31cab4823b0576cfdd2e8023a?response-content-disposition=attachment%3Bfilename%3D%22001---%E5%BA%94%E7%94%A8%E9%87%8D%E7%AD%BE%E5%90%8D.wmv%22&AWSAccessKeyId=9RM1KC629RXWWWGZ5XG6&Expires=1585202559&Signature=%2BpEaExUcDfT0eLwhRbRDustSVQk%3D";
 
@@ -160,7 +160,7 @@
 }
 
 - (void)dealloc{
-    [self.wnPlayer close];
+    [self.wnPlayer releaseWNPlayer];
     NSLog(@"%s",__FUNCTION__);
 
 }

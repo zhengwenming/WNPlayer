@@ -68,6 +68,8 @@ NS_ASSUME_NONNULL_BEGIN
 ///默认是UDP，如有需要用TCP，请传YES,optionDic里面可以设置key-value，比如headers-cookie：xxxx
 - (void)openWithTCP:(BOOL)usesTCP optionDic:(NSDictionary *)optionDic;
 - (void)close;
+- (void)releaseWNPlayer;
+
 - (void)play;
 - (void)pause;
 //判断是否为iPhone X系列

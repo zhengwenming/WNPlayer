@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18477E0E234ECE2700321E37 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18477E07234ECE2600321E37 /* libavutil.a */; };
-		18477E0F234ECE2700321E37 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18477E08234ECE2600321E37 /* libavfilter.a */; };
-		18477E10234ECE2700321E37 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18477E09234ECE2600321E37 /* libavcodec.a */; };
-		18477E11234ECE2700321E37 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18477E0A234ECE2600321E37 /* libavformat.a */; };
-		18477E12234ECE2700321E37 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18477E0B234ECE2600321E37 /* libavdevice.a */; };
-		18477E13234ECE2700321E37 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18477E0C234ECE2600321E37 /* libswresample.a */; };
-		18477E14234ECE2700321E37 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18477E0D234ECE2600321E37 /* libswscale.a */; };
 		18477E9B234ECE4800321E37 /* WNDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18477E17234ECE4700321E37 /* WNDisplayView.m */; };
 		18477E9C234ECE4800321E37 /* WNPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18477E1B234ECE4700321E37 /* WNPlayer.m */; };
 		18477E9F234ECE4800321E37 /* WNPlayerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 18477E22234ECE4700321E37 /* WNPlayerUtils.m */; };
@@ -55,6 +48,13 @@
 		185FF084234DE2C900BBC9BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 185FF083234DE2C900BBC9BF /* main.m */; };
 		186117BD2383BF4C008BCC32 /* CustomerControlView_test.m in Sources */ = {isa = PBXBuildFile; fileRef = 186117BC2383BF4C008BCC32 /* CustomerControlView_test.m */; };
 		18F86381237EB08E0052600E /* WNControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F86380237EB08E0052600E /* WNControlView.m */; };
+		702F5E0D2588E10D00B71D1A /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 702F5E062588E10D00B71D1A /* libavutil.a */; };
+		702F5E0E2588E10D00B71D1A /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 702F5E072588E10D00B71D1A /* libavfilter.a */; };
+		702F5E0F2588E10D00B71D1A /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 702F5E082588E10D00B71D1A /* libavcodec.a */; };
+		702F5E102588E10D00B71D1A /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 702F5E092588E10D00B71D1A /* libavformat.a */; };
+		702F5E112588E10D00B71D1A /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 702F5E0A2588E10D00B71D1A /* libavdevice.a */; };
+		702F5E122588E10D00B71D1A /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 702F5E0B2588E10D00B71D1A /* libswresample.a */; };
+		702F5E132588E10D00B71D1A /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 702F5E0C2588E10D00B71D1A /* libswscale.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,13 +169,6 @@
 		18477E02234ECE2600321E37 /* dv_profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dv_profile.h; sourceTree = "<group>"; };
 		18477E04234ECE2600321E37 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		18477E05234ECE2600321E37 /* swresample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swresample.h; sourceTree = "<group>"; };
-		18477E07234ECE2600321E37 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
-		18477E08234ECE2600321E37 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavfilter.a; sourceTree = "<group>"; };
-		18477E09234ECE2600321E37 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
-		18477E0A234ECE2600321E37 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
-		18477E0B234ECE2600321E37 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavdevice.a; sourceTree = "<group>"; };
-		18477E0C234ECE2600321E37 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
-		18477E0D234ECE2600321E37 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
 		18477E15234ECE4700321E37 /* WNPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNPlayerManager.h; sourceTree = "<group>"; };
 		18477E17234ECE4700321E37 /* WNDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNDisplayView.m; sourceTree = "<group>"; };
 		18477E18234ECE4700321E37 /* WNPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNPlayer.h; sourceTree = "<group>"; };
@@ -323,6 +316,13 @@
 		18F8637E237EACA00052600E /* WNControlViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WNControlViewProtocol.h; sourceTree = "<group>"; };
 		18F8637F237EB08E0052600E /* WNControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WNControlView.h; sourceTree = "<group>"; };
 		18F86380237EB08E0052600E /* WNControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WNControlView.m; sourceTree = "<group>"; };
+		702F5E062588E10D00B71D1A /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
+		702F5E072588E10D00B71D1A /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavfilter.a; sourceTree = "<group>"; };
+		702F5E082588E10D00B71D1A /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
+		702F5E092588E10D00B71D1A /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
+		702F5E0A2588E10D00B71D1A /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavdevice.a; sourceTree = "<group>"; };
+		702F5E0B2588E10D00B71D1A /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
+		702F5E0C2588E10D00B71D1A /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,22 +330,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				702F5E112588E10D00B71D1A /* libavdevice.a in Frameworks */,
+				702F5E122588E10D00B71D1A /* libswresample.a in Frameworks */,
+				702F5E0D2588E10D00B71D1A /* libavutil.a in Frameworks */,
 				18477EE7234ED0FD00321E37 /* libz.tbd in Frameworks */,
+				702F5E132588E10D00B71D1A /* libswscale.a in Frameworks */,
 				18477EE5234ED0F300321E37 /* libbz2.tbd in Frameworks */,
 				18477EE3234ED0EB00321E37 /* libiconv.tbd in Frameworks */,
 				18477EE1234ED0D700321E37 /* OpenGLES.framework in Frameworks */,
 				18477EDF234ED0CC00321E37 /* VideoToolbox.framework in Frameworks */,
 				18477EDD234ED0C300321E37 /* AudioToolbox.framework in Frameworks */,
+				702F5E102588E10D00B71D1A /* libavformat.a in Frameworks */,
 				18477EDB234ED0B800321E37 /* MediaPlayer.framework in Frameworks */,
 				18477EAE234ECE4800321E37 /* libssl.a in Frameworks */,
-				18477E12234ECE2700321E37 /* libavdevice.a in Frameworks */,
-				18477E14234ECE2700321E37 /* libswscale.a in Frameworks */,
+				702F5E0E2588E10D00B71D1A /* libavfilter.a in Frameworks */,
 				18477EAC234ECE4800321E37 /* libcrypto.a in Frameworks */,
-				18477E0F234ECE2700321E37 /* libavfilter.a in Frameworks */,
-				18477E0E234ECE2700321E37 /* libavutil.a in Frameworks */,
-				18477E10234ECE2700321E37 /* libavcodec.a in Frameworks */,
-				18477E13234ECE2700321E37 /* libswresample.a in Frameworks */,
-				18477E11234ECE2700321E37 /* libavformat.a in Frameworks */,
+				702F5E0F2588E10D00B71D1A /* libavcodec.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,8 +372,8 @@
 		18477D8E234ECE2600321E37 /* FFmpeg */ = {
 			isa = PBXGroup;
 			children = (
+				702F5E052588E10D00B71D1A /* lib */,
 				18477D8F234ECE2600321E37 /* include */,
-				18477E06234ECE2600321E37 /* lib */,
 			);
 			path = FFmpeg;
 			sourceTree = "<group>";
@@ -550,20 +550,6 @@
 				18477E05234ECE2600321E37 /* swresample.h */,
 			);
 			path = libswresample;
-			sourceTree = "<group>";
-		};
-		18477E06234ECE2600321E37 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				18477E07234ECE2600321E37 /* libavutil.a */,
-				18477E08234ECE2600321E37 /* libavfilter.a */,
-				18477E09234ECE2600321E37 /* libavcodec.a */,
-				18477E0A234ECE2600321E37 /* libavformat.a */,
-				18477E0B234ECE2600321E37 /* libavdevice.a */,
-				18477E0C234ECE2600321E37 /* libswresample.a */,
-				18477E0D234ECE2600321E37 /* libswscale.a */,
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 		18477E16234ECE4700321E37 /* view */ = {
@@ -820,6 +806,20 @@
 				186117BC2383BF4C008BCC32 /* CustomerControlView_test.m */,
 			);
 			name = "自定义控制层演示";
+			sourceTree = "<group>";
+		};
+		702F5E052588E10D00B71D1A /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				702F5E062588E10D00B71D1A /* libavutil.a */,
+				702F5E072588E10D00B71D1A /* libavfilter.a */,
+				702F5E082588E10D00B71D1A /* libavcodec.a */,
+				702F5E092588E10D00B71D1A /* libavformat.a */,
+				702F5E0A2588E10D00B71D1A /* libavdevice.a */,
+				702F5E0B2588E10D00B71D1A /* libswresample.a */,
+				702F5E0C2588E10D00B71D1A /* libswscale.a */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
