@@ -12,7 +12,7 @@ WNPlayer万能播放器，使用FFmpeg最新版本(4.0.2)，没有使用FFmpeg�
     
     
     1.2、版本4.3.1下载地址
-    链接: https://pan.baidu.com/s/1kyTTrz3fNDGudqi5WtsF2g  密码: 1r2j
+    链接: https://pan.baidu.com/s/1SBgVM6GozALGd6dFr7XceQ  密码: ohct
 
 
 2、第一步的下载文件，提取lib文件夹里面的.a文件，放到项目中的FFmpeg文件下面的lib文件目录下面
