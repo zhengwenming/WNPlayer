@@ -13,6 +13,14 @@ WNPlayer万能播放器，使用FFmpeg最新版本(4.0.2)，没有使用FFmpeg�
     
     1.2、版本4.3.1下载地址
     链接: https://pan.baidu.com/s/1SBgVM6GozALGd6dFr7XceQ  密码: ohct
+    
+    1.3 FFmpeg-4.3.2-iOS.zip
+    链接：https://pan.baidu.com/s/14X9xKYeTFK_Xq94jbvdYMA 
+    提取码：u24v
+
+    1.4 FFmpeg-4.4.1-iOS.zip
+    链接：https://pan.baidu.com/s/1-YCmRFg_gj32V30UkKvVtQ 
+    提取码：kmr6
 
 
 2、第一步的下载文件，提取lib文件夹里面的.a文件，放到项目中的FFmpeg文件下面的lib文件目录下面
