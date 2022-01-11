@@ -368,6 +368,9 @@ static int interruptCallback(void *context) {
 
 #pragma mark - Handle Frames
 - (NSArray *)readFrames {
+    if (!m_pFormatContext) {
+        return nil;
+    }
     if ((m_nVideoStream < 0 && m_nAudioStream < 0) || _isEOF) return nil;
     
     AVFormatContext *fmtctx = m_pFormatContext;
