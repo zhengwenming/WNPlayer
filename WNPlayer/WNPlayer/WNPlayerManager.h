@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)open:(NSString *)url usesTCP:(BOOL)usesTCP optionDic:(NSDictionary *)optionDic;
 - (void)seek:(double)position;
 - (void)close;
-- (void)releaseManager;
+
 - (void)play;
 - (void)pause;
 @end
