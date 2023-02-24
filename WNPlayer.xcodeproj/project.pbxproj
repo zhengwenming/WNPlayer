@@ -48,13 +48,16 @@
 		185FF084234DE2C900BBC9BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 185FF083234DE2C900BBC9BF /* main.m */; };
 		186117BD2383BF4C008BCC32 /* CustomerControlView_test.m in Sources */ = {isa = PBXBuildFile; fileRef = 186117BC2383BF4C008BCC32 /* CustomerControlView_test.m */; };
 		18F86381237EB08E0052600E /* WNControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F86380237EB08E0052600E /* WNControlView.m */; };
-		70F38D4B2793E51900DAA44F /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F38D442793E51800DAA44F /* libavutil.a */; };
-		70F38D4C2793E51900DAA44F /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F38D452793E51800DAA44F /* libavfilter.a */; };
-		70F38D4D2793E51900DAA44F /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F38D462793E51800DAA44F /* libavcodec.a */; };
-		70F38D4E2793E51900DAA44F /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F38D472793E51800DAA44F /* libavformat.a */; };
-		70F38D4F2793E51900DAA44F /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F38D482793E51800DAA44F /* libavdevice.a */; };
-		70F38D502793E51900DAA44F /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F38D492793E51800DAA44F /* libswresample.a */; };
-		70F38D512793E51900DAA44F /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F38D4A2793E51800DAA44F /* libswscale.a */; };
+		9458F43F29A8AE8400070D3F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9458F43E29A8AE8400070D3F /* .gitignore */; };
+		9458F44929A8AEF500070D3F /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9458F44129A8AEF500070D3F /* libavutil.a */; };
+		9458F44A29A8AEF500070D3F /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9458F44229A8AEF500070D3F /* libavfilter.a */; };
+		9458F44B29A8AEF500070D3F /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9458F44329A8AEF500070D3F /* libavcodec.a */; };
+		9458F44C29A8AEF500070D3F /* libpostproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9458F44429A8AEF500070D3F /* libpostproc.a */; };
+		9458F44D29A8AEF500070D3F /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9458F44529A8AEF500070D3F /* libavformat.a */; };
+		9458F44E29A8AEF500070D3F /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9458F44629A8AEF500070D3F /* libavdevice.a */; };
+		9458F44F29A8AEF500070D3F /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9458F44729A8AEF500070D3F /* libswresample.a */; };
+		9458F45029A8AEF500070D3F /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9458F44829A8AEF500070D3F /* libswscale.a */; };
+		9458F45229A8AF5B00070D3F /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9458F45129A8AF5B00070D3F /* test.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -316,13 +319,16 @@
 		18F8637E237EACA00052600E /* WNControlViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WNControlViewProtocol.h; sourceTree = "<group>"; };
 		18F8637F237EB08E0052600E /* WNControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WNControlView.h; sourceTree = "<group>"; };
 		18F86380237EB08E0052600E /* WNControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WNControlView.m; sourceTree = "<group>"; };
-		70F38D442793E51800DAA44F /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
-		70F38D452793E51800DAA44F /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavfilter.a; sourceTree = "<group>"; };
-		70F38D462793E51800DAA44F /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
-		70F38D472793E51800DAA44F /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
-		70F38D482793E51800DAA44F /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavdevice.a; sourceTree = "<group>"; };
-		70F38D492793E51800DAA44F /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
-		70F38D4A2793E51800DAA44F /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
+		9458F43E29A8AE8400070D3F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		9458F44129A8AEF500070D3F /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
+		9458F44229A8AEF500070D3F /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavfilter.a; sourceTree = "<group>"; };
+		9458F44329A8AEF500070D3F /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
+		9458F44429A8AEF500070D3F /* libpostproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpostproc.a; sourceTree = "<group>"; };
+		9458F44529A8AEF500070D3F /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
+		9458F44629A8AEF500070D3F /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavdevice.a; sourceTree = "<group>"; };
+		9458F44729A8AEF500070D3F /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
+		9458F44829A8AEF500070D3F /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
+		9458F45129A8AF5B00070D3F /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,22 +336,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70F38D4F2793E51900DAA44F /* libavdevice.a in Frameworks */,
-				70F38D502793E51900DAA44F /* libswresample.a in Frameworks */,
-				70F38D4B2793E51900DAA44F /* libavutil.a in Frameworks */,
+				9458F44929A8AEF500070D3F /* libavutil.a in Frameworks */,
 				18477EE7234ED0FD00321E37 /* libz.tbd in Frameworks */,
-				70F38D512793E51900DAA44F /* libswscale.a in Frameworks */,
 				18477EE5234ED0F300321E37 /* libbz2.tbd in Frameworks */,
 				18477EE3234ED0EB00321E37 /* libiconv.tbd in Frameworks */,
 				18477EE1234ED0D700321E37 /* OpenGLES.framework in Frameworks */,
+				9458F44C29A8AEF500070D3F /* libpostproc.a in Frameworks */,
 				18477EDF234ED0CC00321E37 /* VideoToolbox.framework in Frameworks */,
 				18477EDD234ED0C300321E37 /* AudioToolbox.framework in Frameworks */,
-				70F38D4E2793E51900DAA44F /* libavformat.a in Frameworks */,
+				9458F44F29A8AEF500070D3F /* libswresample.a in Frameworks */,
 				18477EDB234ED0B800321E37 /* MediaPlayer.framework in Frameworks */,
+				9458F44D29A8AEF500070D3F /* libavformat.a in Frameworks */,
+				9458F44E29A8AEF500070D3F /* libavdevice.a in Frameworks */,
+				9458F45029A8AEF500070D3F /* libswscale.a in Frameworks */,
 				18477EAE234ECE4800321E37 /* libssl.a in Frameworks */,
-				70F38D4C2793E51900DAA44F /* libavfilter.a in Frameworks */,
+				9458F44A29A8AEF500070D3F /* libavfilter.a in Frameworks */,
 				18477EAC234ECE4800321E37 /* libcrypto.a in Frameworks */,
-				70F38D4D2793E51900DAA44F /* libavcodec.a in Frameworks */,
+				9458F44B29A8AEF500070D3F /* libavcodec.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +379,7 @@
 		18477D8E234ECE2600321E37 /* FFmpeg */ = {
 			isa = PBXGroup;
 			children = (
-				70F38D432793E51800DAA44F /* lib */,
+				9458F44029A8AEF500070D3F /* lib */,
 				18477D8F234ECE2600321E37 /* include */,
 			);
 			path = FFmpeg;
@@ -784,6 +791,7 @@
 				18477F14234F21F100321E37 /* FirstViewController.h */,
 				18477F15234F21F100321E37 /* FirstViewController.m */,
 				18477F17234F221000321E37 /* SecondViewController.h */,
+				9458F45129A8AF5B00070D3F /* test.mp4 */,
 				18477F18234F221000321E37 /* SecondViewController.m */,
 				18A1A03423A730850011795D /* 自定义控制层演示 */,
 				18477F1A234F24CB00321E37 /* DetailViewController.h */,
@@ -793,6 +801,7 @@
 				185FF07A234DE2C200BBC9BF /* Main.storyboard */,
 				185FF07D234DE2C900BBC9BF /* Assets.xcassets */,
 				185FF07F234DE2C900BBC9BF /* LaunchScreen.storyboard */,
+				9458F43E29A8AE8400070D3F /* .gitignore */,
 				185FF082234DE2C900BBC9BF /* Info.plist */,
 				185FF083234DE2C900BBC9BF /* main.m */,
 			);
@@ -808,16 +817,17 @@
 			name = "自定义控制层演示";
 			sourceTree = "<group>";
 		};
-		70F38D432793E51800DAA44F /* lib */ = {
+		9458F44029A8AEF500070D3F /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				70F38D442793E51800DAA44F /* libavutil.a */,
-				70F38D452793E51800DAA44F /* libavfilter.a */,
-				70F38D462793E51800DAA44F /* libavcodec.a */,
-				70F38D472793E51800DAA44F /* libavformat.a */,
-				70F38D482793E51800DAA44F /* libavdevice.a */,
-				70F38D492793E51800DAA44F /* libswresample.a */,
-				70F38D4A2793E51800DAA44F /* libswscale.a */,
+				9458F44129A8AEF500070D3F /* libavutil.a */,
+				9458F44229A8AEF500070D3F /* libavfilter.a */,
+				9458F44329A8AEF500070D3F /* libavcodec.a */,
+				9458F44429A8AEF500070D3F /* libpostproc.a */,
+				9458F44529A8AEF500070D3F /* libavformat.a */,
+				9458F44629A8AEF500070D3F /* libavdevice.a */,
+				9458F44729A8AEF500070D3F /* libswresample.a */,
+				9458F44829A8AEF500070D3F /* libswscale.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -884,11 +894,13 @@
 				18477EA4234ECE4800321E37 /* WNPlayerVertexShader.glsl in Resources */,
 				185FF081234DE2C900BBC9BF /* LaunchScreen.storyboard in Resources */,
 				18477EA5234ECE4800321E37 /* WNPlayerYUVFragmentShader.glsl in Resources */,
+				9458F43F29A8AE8400070D3F /* .gitignore in Resources */,
 				185FF07E234DE2C900BBC9BF /* Assets.xcassets in Resources */,
 				18477EAB234ECE4800321E37 /* LICENSE in Resources */,
 				18477EA2234ECE4800321E37 /* WNPlayerRotationVertexShader.glsl in Resources */,
 				185FF07C234DE2C200BBC9BF /* Main.storyboard in Resources */,
 				18477EA3234ECE4800321E37 /* WNPlayerRGBFragmentShader.glsl in Resources */,
+				9458F45229A8AF5B00070D3F /* test.mp4 in Resources */,
 				18477EA1234ECE4800321E37 /* WNPlayerRotationScaleVertexShader.glsl in Resources */,
 				18477EA0234ECE4800321E37 /* WNPlayerStrings.strings in Resources */,
 			);

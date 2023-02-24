@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+/manager
+*.a
+*.mp4
+
+
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.history/

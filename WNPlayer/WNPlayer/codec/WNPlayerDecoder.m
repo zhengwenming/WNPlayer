@@ -211,7 +211,7 @@ static int interruptCallback(void *context) {
     
     self.rotation = rotation;
     int64_t duration = fmtctx->duration;
-    self.duration = (duration == AV_NOPTS_VALUE ? -1 : ((double)duration / AV_TIME_BASE));
+    self.duration = ceil((duration == AV_NOPTS_VALUE ? -1 : ((double)duration / AV_TIME_BASE)));
     self.metadata = [self findMetadata:fmtctx];
     
     g_bPrepareClose = FALSE;
