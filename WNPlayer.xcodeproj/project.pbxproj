@@ -58,6 +58,7 @@
 		9458F44F29A8AEF500070D3F /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9458F44729A8AEF500070D3F /* libswresample.a */; };
 		9458F45029A8AEF500070D3F /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9458F44829A8AEF500070D3F /* libswscale.a */; };
 		9458F45229A8AF5B00070D3F /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9458F45129A8AF5B00070D3F /* test.mp4 */; };
+		9458F45429A8B58700070D3F /* test2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9458F45329A8B58700070D3F /* test2.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -329,6 +330,7 @@
 		9458F44729A8AEF500070D3F /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
 		9458F44829A8AEF500070D3F /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
 		9458F45129A8AF5B00070D3F /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
+		9458F45329A8B58700070D3F /* test2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -791,8 +793,9 @@
 				18477F14234F21F100321E37 /* FirstViewController.h */,
 				18477F15234F21F100321E37 /* FirstViewController.m */,
 				18477F17234F221000321E37 /* SecondViewController.h */,
-				9458F45129A8AF5B00070D3F /* test.mp4 */,
 				18477F18234F221000321E37 /* SecondViewController.m */,
+				9458F45329A8B58700070D3F /* test2.mp4 */,
+				9458F45129A8AF5B00070D3F /* test.mp4 */,
 				18A1A03423A730850011795D /* 自定义控制层演示 */,
 				18477F1A234F24CB00321E37 /* DetailViewController.h */,
 				18477F1B234F24CB00321E37 /* DetailViewController.m */,
@@ -898,6 +901,7 @@
 				185FF07E234DE2C900BBC9BF /* Assets.xcassets in Resources */,
 				18477EAB234ECE4800321E37 /* LICENSE in Resources */,
 				18477EA2234ECE4800321E37 /* WNPlayerRotationVertexShader.glsl in Resources */,
+				9458F45429A8B58700070D3F /* test2.mp4 in Resources */,
 				185FF07C234DE2C200BBC9BF /* Main.storyboard in Resources */,
 				18477EA3234ECE4800321E37 /* WNPlayerRGBFragmentShader.glsl in Resources */,
 				9458F45229A8AF5B00070D3F /* test.mp4 in Resources */,

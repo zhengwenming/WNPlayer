@@ -15,13 +15,26 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol WNControlViewProtocol <NSObject>
 
 @required
-
+/**
+ * 播放器
+ */
 @property (nonatomic,weak) WNPlayer *player;
-
--(void)play;
--(void)pause;
--(void)singleTaped;
--(void)doubleTaped;
+/**
+ * 播放
+ */
+- (void)play;
+/**
+ * 暂停
+ */
+- (void)pause;
+/**
+ * 单击
+ */
+- (void)singleTaped;
+/**
+ * 双击
+ */
+- (void)doubleTaped;
 @end
 
 NS_ASSUME_NONNULL_END

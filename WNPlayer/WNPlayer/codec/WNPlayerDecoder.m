@@ -331,14 +331,16 @@ static int interruptCallback(void *context) {
     [self closeVideoStream];
     [self closeAudioStream];
     [self closePictureStream];
-    if (m_pFormatContext != NULL) avformat_close_input(&m_pFormatContext);
+    if (m_pFormatContext != NULL){
+        avformat_close_input(&m_pFormatContext);
+    }
         avformat_network_deinit();
         self.isYUV = NO;
         self.hasVideo = NO;
         self.hasAudio = NO;
         self.hasPicture = NO;
         self.isEOF = NO;
-        }
+}
 
 - (void)closeVideoStream {
     m_nVideoStream = -1;
@@ -416,10 +418,8 @@ static int interruptCallback(void *context) {
             if (!_hasVideo && !_hasAudio) reading = NO;
         }
         if (fs != nil && fs.count > 0) [frames addObjectsFromArray:fs];
-        
         av_packet_unref(&packet);
     }
-    
     return frames;
 }
 
@@ -452,12 +452,10 @@ static int interruptCallback(void *context) {
     }
     
     CGContextDrawImage(context, CGRectMake(0, 0, width, height), image);
-    
     CGColorSpaceRelease(colorSpace);
     CGContextRelease(context);
     CGImageRelease(image);
     CGDataProviderRelease(provider);
-    
     NSMutableArray<WNPlayerVideoFrame *> *frames = [NSMutableArray array];
     WNPlayerVideoRGBFrame *frame = [[WNPlayerVideoRGBFrame alloc] init];
     frame.data = [NSData dataWithBytes:imageData length:length];
@@ -465,16 +463,13 @@ static int interruptCallback(void *context) {
     frame.height = (int)height;
     frame.hasAlpha = YES;
     [frames addObject:frame];
-    
     free(imageData);
-    
     return frames;
 }
 
 - (NSArray<WNPlayerVideoFrame *> *)handleVideoPacket:(AVPacket *)packet byContext:(AVCodecContext *)context andFrame:(AVFrame *)frame andSwsContext:(struct SwsContext *)swsctx andSwsFrame:(AVFrame *)swsframe {
     int ret = avcodec_send_packet(context, packet);
     if (ret != 0) { NSLog(@"avcodec_send_packet: %d", ret); return nil; }
-    
     NSMutableArray<WNPlayerVideoFrame *> *frames = [NSMutableArray array];
     do {
         ret = avcodec_receive_frame(context, frame);
@@ -527,7 +522,6 @@ static int interruptCallback(void *context) {
         
         [frames addObject:f];
     } while(ret == 0);
-    
     return frames;
 }
 
@@ -598,7 +592,7 @@ static int interruptCallback(void *context) {
         
         [frames addObject:f];
     } while(ret == 0);
-    
+
     return frames;
 }
 

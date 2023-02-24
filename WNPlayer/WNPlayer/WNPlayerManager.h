@@ -23,14 +23,30 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL opened;
 @property (nonatomic) BOOL playing;
 @property (nonatomic) BOOL buffering;
-@property (nonatomic, strong) NSDictionary *metadata;
+@property (nonatomic, assign) BOOL mute;//静音
+@property (nonatomic, strong) NSDictionary *metadata;//视频元数据
 
 - (void)open:(NSString *)url usesTCP:(BOOL)usesTCP optionDic:(NSDictionary *)optionDic;
+/**
+ *  跳转到特定时间点播放
+ */
 - (void)seek:(double)position;
+/**
+ * 关闭播放器
+ */
 - (void)close;
-
+/**
+ * 开始播放
+ */
 - (void)play;
+/**
+ * 暂停
+ */
 - (void)pause;
+/**
+ * 静音 OR 外放出声音
+ */
+- (BOOL)muteVoice;
 @end
 
 NS_ASSUME_NONNULL_END

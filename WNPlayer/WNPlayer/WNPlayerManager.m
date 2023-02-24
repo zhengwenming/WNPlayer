@@ -19,7 +19,6 @@
 }
 @property (nonatomic, strong) WNPlayerDecoder *decoder;
 @property (nonatomic, strong) WNAudioManager *audioManager;
-
 @property (nonatomic, strong) NSMutableArray *vframes;
 @property (nonatomic, strong) NSMutableArray *aframes;
 @property (nonatomic, strong) WNPlayerAudioFrame *playingAudioFrame;
@@ -162,8 +161,8 @@
     if (!self.opened || self.playing) return;
     self.playing = YES;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1)), dispatch_get_main_queue(), ^{
-        [self render];
         [self startFrameReaderThread];
+        [self renderFrames];
     });
     
     NSError *error = nil;
@@ -179,7 +178,16 @@
         [self handleError:error];
     }
 }
-
+- (BOOL)muteVoice {
+    NSError *error = nil;
+    BOOL ret = [self.audioManager mute:!_mute error:&error];
+    if (!ret) {
+        [self handleError:error];
+    }else{
+        _mute = !_mute;
+    }
+    return _mute;
+}
 - (void)startFrameReaderThread {
     if (self.frameReaderThread == nil) {
         self.frameReaderThread = [[NSThread alloc] initWithTarget:self selector:@selector(runFrameReader) object:nil];
@@ -190,7 +198,7 @@
 - (void)runFrameReader {
     @autoreleasepool {
         while (self.playing) {
-            [self readFrame];
+            [self readUncompressFrames];
             if (self.requestSeek) {
                 [self seekPositionInFrameReader];
             } else {
@@ -199,6 +207,110 @@
         }
         self.frameReaderThread = nil;
     }
+}
+- (void)readUncompressFrames {
+    self.buffering = YES;
+    
+    NSMutableArray *tempVFrames = [NSMutableArray array];
+    NSMutableArray *tempAFrames = [NSMutableArray array];
+    NSInteger tempFrame = 0;
+    dispatch_time_t t = dispatch_time(DISPATCH_TIME_NOW, 0.02 * NSEC_PER_SEC);
+    
+    while (1) {
+        if (self.playing
+            &&
+            self.decoder.isEOF == NO
+            &&
+            self.requestSeek == NO
+            &&
+            (self.bufferedDuration + tempFrame) < self.maxBufferDuration) {
+            
+            @autoreleasepool {
+                NSArray *fremes = [self.decoder readFrames];
+                if (fremes == nil) {
+                    break;
+                }
+                if (fremes.count == 0) {
+                    continue;
+                }
+                {
+                    for (WNPlayerFrame *frame in fremes) {
+                        if (frame.type == kWNPlayerFrameTypeVideo) {
+                            [tempVFrames addObject:frame];
+                            tempFrame += 1;
+                        }
+                    }
+                    
+                    long timeout = dispatch_semaphore_wait(self.vFramesLock, t);
+                    if (timeout == 0) {
+                        if (tempVFrames.count > 0) {
+                            self.bufferedDuration += tempFrame;
+                            tempFrame = 0;
+                            [self.vframes addObjectsFromArray:tempVFrames];
+                            [tempVFrames removeAllObjects];
+                        }
+                        dispatch_semaphore_signal(self.vFramesLock);
+                    }
+                }
+                {
+                    for (WNPlayerFrame *frame in fremes) {
+                        if (frame.type == kWNPlayerFrameTypeAudio) {
+                            [tempAFrames addObject:frame];
+                            if (!self.decoder.hasVideo) {
+                                tempFrame += 1;
+                            }
+                        }
+                    }
+                    
+                    long timeout = dispatch_semaphore_wait(self.aFramesLock, t);
+                    if (timeout == 0) {
+                        if (tempAFrames.count > 0) {
+                            if (!self.decoder.hasVideo) {
+                                self.bufferedDuration += tempFrame;
+                                tempFrame = 0;
+                            }
+                            [self.aframes addObjectsFromArray:tempAFrames];
+                            [tempAFrames removeAllObjects];
+                        }
+                        dispatch_semaphore_signal(self.aFramesLock);
+                    }
+                }
+            }
+        }
+        else{
+            
+        }
+    }
+    
+    {
+        // add the rest video frames
+        while (tempVFrames.count > 0 || tempAFrames.count > 0) {
+            if (tempVFrames.count > 0) {
+                long timeout = dispatch_semaphore_wait(self.vFramesLock, t);
+                if (timeout == 0) {
+                    self.bufferedDuration += tempFrame;
+                    tempFrame = 0;
+                    [self.vframes addObjectsFromArray:tempVFrames];
+                    [tempVFrames removeAllObjects];
+                    dispatch_semaphore_signal(self.vFramesLock);
+                }
+            }
+            if (tempAFrames.count > 0) {
+                long timeout = dispatch_semaphore_wait(self.aFramesLock, t);
+                if (timeout == 0) {
+                    if (!self.decoder.hasVideo) {
+                        self.bufferedDuration += tempFrame;
+                        tempFrame = 0;
+                    }
+                    [self.aframes addObjectsFromArray:tempAFrames];
+                    [tempAFrames removeAllObjects];
+                    dispatch_semaphore_signal(self.aFramesLock);
+                }
+            }
+        }
+        
+    }
+    self.buffering = NO;
 }
 - (void)seek:(double)position{
     
@@ -211,7 +323,7 @@
     double tempDuration = 0;
     dispatch_time_t t = dispatch_time(DISPATCH_TIME_NOW, 0.02 * NSEC_PER_SEC);
     
-    while (self.playing && !self.decoder.isEOF && !self.requestSeek
+    while (self.playing &&  !self.requestSeek
            && (self.bufferedDuration + tempDuration) < self.maxBufferDuration) {
         @autoreleasepool {
             NSArray *fs = [self.decoder readFrames];
@@ -309,10 +421,11 @@
     self.mediaPosition = self.requestSeekPosition;
 }
 
-- (void)render {
+- (void)renderFrames {
     if (!self.playing) return;
     
     BOOL eof = self.decoder.isEOF;
+
     BOOL noframes = ((self.decoder.hasVideo && self.vframes.count <= 0) ||
                      (self.decoder.hasAudio && self.aframes.count <= 0));
     
@@ -345,7 +458,7 @@
     if (self.vframes.count <= 0 || !self.decoder.hasVideo || self.notifiedBufferStart) {
         __weak typeof(self)weakSelf = self;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf render];
+            [weakSelf renderFrames];
         });
         return;
     }
@@ -369,13 +482,12 @@
     NSTimeInterval t = MAX(frame.duration + syncTime, 0.01);
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(t * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self render];
+        [self renderFrames];
     });
 }
 
 - (double)syncTime {
     const double now = [NSDate timeIntervalSinceReferenceDate];
-    
     if (self.mediaSyncTime == 0) {
         self.mediaSyncTime = now;
         self.mediaSyncPosition = self.mediaPosition;
@@ -385,12 +497,10 @@
     double dp = self.mediaPosition - self.mediaSyncPosition;
     double dt = now - self.mediaSyncTime;
     double sync = dp - dt;
-    
     if (sync > 1 || sync < -1) {
         sync = 0;
         self.mediaSyncTime = 0;
     }
-    
     return sync;
 }
 

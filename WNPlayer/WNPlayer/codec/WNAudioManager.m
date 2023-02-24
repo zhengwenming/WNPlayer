@@ -32,6 +32,7 @@ static OSStatus audioUnitRenderCallback(void *inRefCon,
     BOOL _closing;
     BOOL _shouldPlayAfterInterruption;
     BOOL _playing;
+    BOOL _mute;
     double _sampleRate;
     UInt32 _bitsPerChannel;
     UInt32 _channelsPerFrame;
@@ -332,7 +333,36 @@ static OSStatus audioUnitRenderCallback(void *inRefCon,
     }
     return !_playing;
 }
-
+//静音开关🔇
+- (BOOL)mute:(BOOL)mute error:(NSError **)error{
+    OSStatus status;
+    if (mute) {
+        status = AudioOutputUnitStop(_audioUnit);
+    }
+    else{
+        status = AudioOutputUnitStart(_audioUnit);
+    }
+    if (status == noErr) {
+        _mute = mute;
+        return YES;
+    }else if(mute) {
+        NSError *rawError = [NSError errorWithDomain:NSOSStatusErrorDomain code:status userInfo:nil];
+        [WNPlayerUtils createError:error
+                        withDomain:WNPlayerErrorDomainAudioManager
+                           andCode:WNPlayerErrorCodeCannotStopAudioUnit
+                        andMessage:[WNPlayerUtils localizedString:@"WN_PLAYER_STRINGS_CANNOT_STOP_AUDIO_UNIT"]
+                       andRawError:rawError];
+        return NO;
+    }else{
+        NSError *rawError = [NSError errorWithDomain:NSOSStatusErrorDomain code:status userInfo:nil];
+        [WNPlayerUtils createError:error
+                        withDomain:WNPlayerErrorDomainAudioManager
+                           andCode:WNPlayerErrorCodeCannotStartAudioUnit
+                        andMessage:[WNPlayerUtils localizedString:@"WN_PLAYER_STRINGS_CANNOT_START_AUDIO_UNIT"]
+                       andRawError:rawError];
+        return NO;
+    }
+}
 - (OSStatus)render:(AudioBufferList *)ioData count:(UInt32)inNumberFrames {
     UInt32 num = ioData->mNumberBuffers;
     for (UInt32 i = 0; i < num; ++i) {
