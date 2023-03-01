@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: b37070b5a662ac7ea4688850f3def8d08f0f48db
+PODS:
+  - ffmpeg-kit-ios-min (4.5.1.LTS)
+
+DEPENDENCIES:
+  - ffmpeg-kit-ios-min (= 4.5.1.LTS)
+
+SPEC REPOS:
+  trunk:
+    - ffmpeg-kit-ios-min
+
+SPEC CHECKSUMS:
+  ffmpeg-kit-ios-min: 4b1e6ee866ceea4ccc90ef3213edec2f3fa2e416
+
+PODFILE CHECKSUM: 895dc1c6615dbac5673d2f340e1babb32ff3668f
 
 COCOAPODS: 1.8.4

@@ -523,6 +523,7 @@
 				185FF06A234DE2C200BBC9BF /* Sources */,
 				185FF06B234DE2C200BBC9BF /* Frameworks */,
 				185FF06C234DE2C200BBC9BF /* Resources */,
+				089A03960DE11B54A5A0B868 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -589,6 +590,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		089A03960DE11B54A5A0B868 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WNPlayer/Pods-WNPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WNPlayer/Pods-WNPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WNPlayer/Pods-WNPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1A8F1160CBCB2BEE5B2576F3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

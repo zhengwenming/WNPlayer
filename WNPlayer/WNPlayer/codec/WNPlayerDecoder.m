@@ -13,6 +13,7 @@
 #import "WNPlayerAudioFrame.h"
 #import "WNPlayerVideoRGBFrame.h"
 #import "WNPlayerVideoYUVFrame.h"
+#import <libavcodec/avcodec.h>
 #import <libavformat/avformat.h>
 #import <libavutil/imgutils.h>
 #import <libavutil/opt.h>
