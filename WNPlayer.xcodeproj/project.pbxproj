@@ -49,6 +49,7 @@
 		186117BD2383BF4C008BCC32 /* CustomerControlView_test.m in Sources */ = {isa = PBXBuildFile; fileRef = 186117BC2383BF4C008BCC32 /* CustomerControlView_test.m */; };
 		18F86381237EB08E0052600E /* WNControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F86380237EB08E0052600E /* WNControlView.m */; };
 		9458F43F29A8AE8400070D3F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9458F43E29A8AE8400070D3F /* .gitignore */; };
+		BA1336D329AF5BC7006FCC85 /* Swallowed-5-FPS.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BA1336D229AF5BC7006FCC85 /* Swallowed-5-FPS.mp4 */; };
 		FD4E05AF06B226A627FB78C1 /* Pods_WNPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE6E54999DA8B91426401DB /* Pods_WNPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -203,6 +204,7 @@
 		1BE6E54999DA8B91426401DB /* Pods_WNPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WNPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6909099E0DA8F95F2891D220 /* Pods-WNPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WNPlayer.debug.xcconfig"; path = "Target Support Files/Pods-WNPlayer/Pods-WNPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		9458F43E29A8AE8400070D3F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		BA1336D229AF5BC7006FCC85 /* Swallowed-5-FPS.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swallowed-5-FPS.mp4"; sourceTree = "<group>"; };
 		C17DCC45A35FFE37E96BD2DB /* Pods-WNPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WNPlayer.release.xcconfig"; path = "Target Support Files/Pods-WNPlayer/Pods-WNPlayer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -469,6 +471,7 @@
 		185FF070234DE2C200BBC9BF /* WNPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				BA1336D229AF5BC7006FCC85 /* Swallowed-5-FPS.mp4 */,
 				185FF071234DE2C200BBC9BF /* AppDelegate.h */,
 				185FF072234DE2C200BBC9BF /* AppDelegate.m */,
 				18477F11234F21A200321E37 /* RootTabBarController.h */,
@@ -508,7 +511,6 @@
 				6909099E0DA8F95F2891D220 /* Pods-WNPlayer.debug.xcconfig */,
 				C17DCC45A35FFE37E96BD2DB /* Pods-WNPlayer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -581,6 +583,7 @@
 				18477EAB234ECE4800321E37 /* LICENSE in Resources */,
 				18477EA2234ECE4800321E37 /* WNPlayerRotationVertexShader.glsl in Resources */,
 				185FF07C234DE2C200BBC9BF /* Main.storyboard in Resources */,
+				BA1336D329AF5BC7006FCC85 /* Swallowed-5-FPS.mp4 in Resources */,
 				18477EA3234ECE4800321E37 /* WNPlayerRGBFragmentShader.glsl in Resources */,
 				18477EA1234ECE4800321E37 /* WNPlayerRotationScaleVertexShader.glsl in Resources */,
 				18477EA0234ECE4800321E37 /* WNPlayerStrings.strings in Resources */,
@@ -807,8 +810,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WNPlayer/WNPlayer.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7D992WX2BB;
+				DEVELOPMENT_TEAM = 98Z44LTHNG;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/WNPlayer/FFmpeg/include\"";
 				INFOPLIST_FILE = WNPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -821,8 +825,9 @@
 					"$(PROJECT_DIR)/WNPlayer/FFmpeg/lib",
 					"$(PROJECT_DIR)/WNPlayer/WNPlayer/openssl/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zwm.WNPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhenWM.WNPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -834,8 +839,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WNPlayer/WNPlayer.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7D992WX2BB;
+				DEVELOPMENT_TEAM = 98Z44LTHNG;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/WNPlayer/FFmpeg/include\"";
 				INFOPLIST_FILE = WNPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -848,8 +854,9 @@
 					"$(PROJECT_DIR)/WNPlayer/FFmpeg/lib",
 					"$(PROJECT_DIR)/WNPlayer/WNPlayer/openssl/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zwm.WNPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhenWM.WNPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

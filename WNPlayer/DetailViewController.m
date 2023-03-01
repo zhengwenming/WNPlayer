@@ -136,7 +136,7 @@
 //        self.wnPlayer.urlString = @"https://paasalihlsgw.lechange.cn:443/LCO/4F069C3PAZB2065/15/1/20190919162804/dev_20190919162804_kcfx18ca340dnrdg.m3u8?proto=https";
 
         
-        NSURL *URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"test" ofType:@"mp4"]];
+        NSURL *URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Swallowed" ofType:@"mp4"]];
         self.wnPlayer.urlString = URL.absoluteString;
     
         [self.view addSubview:self.wnPlayer];
